@@ -166,7 +166,7 @@ export default function ContactSection() {
               letterSpacing: '0.04em',
             }}
           >
-            2025
+            {new Date().getFullYear()}
           </span>
         </motion.div>
       </div>
