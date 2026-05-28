@@ -50,7 +50,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ minHeight: '100dvh', backgroundColor: '#090909' }}
+      style={{ minHeight: '100dvh', backgroundColor: 'var(--bg)' }}
     >
       <ParticleField />
 
@@ -111,7 +111,7 @@ export default function Hero() {
               style={{
                 fontFamily: 'var(--font-space-grotesk)',
                 fontSize: '0.72rem',
-                color: '#5c5855',
+                color: 'var(--text-muted)',
                 letterSpacing: '0.04em',
               }}
             >
@@ -126,7 +126,7 @@ export default function Hero() {
               fontSize: 'clamp(3.2rem, 8.5vw, 7.5rem)',
               lineHeight: 0.95,
               letterSpacing: '-0.025em',
-              color: '#f0ece5',
+              color: 'var(--text)',
               marginBottom: '2rem',
             }}
           >
@@ -135,7 +135,7 @@ export default function Hero() {
             </div>
             <div style={{ overflow: 'hidden', paddingBottom: '0.05em' }}>
               <div className="h-l2">
-                <span style={{ color: '#c8a96a' }}>trabalham</span> para
+                <span style={{ color: 'var(--accent)' }}>trabalham</span> para
               </div>
             </div>
             <div style={{ overflow: 'hidden', paddingBottom: '0.05em' }}>
@@ -148,7 +148,7 @@ export default function Hero() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
-              color: '#5c5855',
+              color: 'var(--text-muted)',
               lineHeight: 1.75,
               maxWidth: '42ch',
               marginBottom: '2.8rem',
@@ -168,8 +168,8 @@ export default function Hero() {
                 style={{
                   display: 'inline-block',
                   padding: '0.85rem 1.9rem',
-                  backgroundColor: '#f0ece5',
-                  color: '#090909',
+                  backgroundColor: 'var(--text)',
+                  color: 'var(--bg)',
                   fontFamily: 'var(--font-space-grotesk)',
                   fontWeight: 500,
                   fontSize: '0.82rem',
@@ -179,10 +179,10 @@ export default function Hero() {
                   transition: 'background-color 0.25s ease',
                 }}
                 onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.backgroundColor = '#c8a96a')
+                  ((e.currentTarget as HTMLElement).style.backgroundColor = 'var(--accent)')
                 }
                 onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.backgroundColor = '#f0ece5')
+                  ((e.currentTarget as HTMLElement).style.backgroundColor = 'var(--text)')
                 }
               >
                 Ver Projetos
@@ -194,13 +194,13 @@ export default function Hero() {
                 style={{
                   fontFamily: 'var(--font-space-grotesk)',
                   fontSize: '0.82rem',
-                  color: '#5c5855',
+                  color: 'var(--text-muted)',
                   textDecoration: 'none',
                   transition: 'color 0.25s ease',
                   letterSpacing: '0.01em',
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#f0ece5')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#5c5855')}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text)')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-muted)')}
               >
                 Entrar em contato
               </a>
@@ -233,7 +233,7 @@ export default function Hero() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.65rem',
-              color: '#2e2c2a',
+              color: 'var(--text-faintest)',
               letterSpacing: '0.04em',
             }}
           >
@@ -243,7 +243,7 @@ export default function Hero() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.65rem',
-              color: '#2e2c2a',
+              color: 'var(--text-faintest)',
               letterSpacing: '0.04em',
             }}
           >

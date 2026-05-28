@@ -10,10 +10,10 @@ export default function About() {
     <section
       id="sobre"
       style={{
-        backgroundColor: '#090909',
+        backgroundColor: 'var(--bg)',
         paddingTop: '6rem',
         paddingBottom: '6rem',
-        borderTop: '1px solid rgba(255,255,255,0.07)',
+        borderTop: '1px solid var(--border)',
       }}
     >
       <div
@@ -47,7 +47,7 @@ export default function About() {
               fontFamily: 'var(--font-syne)',
               fontWeight: 800,
               fontSize: 'clamp(2.4rem, 5.5vw, 4.8rem)',
-              color: '#f0ece5',
+              color: 'var(--text)',
               lineHeight: 0.95,
               letterSpacing: '-0.025em',
               marginBottom: '2rem',
@@ -61,7 +61,7 @@ export default function About() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.9rem',
-              color: '#5c5855',
+              color: 'var(--text-muted)',
               lineHeight: 1.8,
               maxWidth: '40ch',
               marginBottom: '1.5rem',
@@ -74,7 +74,7 @@ export default function About() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.9rem',
-              color: '#5c5855',
+              color: 'var(--text-muted)',
               lineHeight: 1.8,
               maxWidth: '40ch',
             }}
@@ -95,7 +95,7 @@ export default function About() {
               fontSize: '0.65rem',
               textTransform: 'uppercase',
               letterSpacing: '0.12em',
-              color: '#3a3835',
+              color: 'var(--text-faint)',
               fontFamily: 'var(--font-space-grotesk)',
               marginBottom: '1.5rem',
             }}
@@ -116,7 +116,7 @@ export default function About() {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '1rem 0',
-                  borderBottom: '1px solid rgba(255,255,255,0.05)',
+                  borderBottom: '1px solid var(--border-soft)',
                 }}
               >
                 <span
@@ -124,7 +124,7 @@ export default function About() {
                     fontFamily: 'var(--font-syne)',
                     fontWeight: 700,
                     fontSize: 'clamp(1.4rem, 3vw, 2.2rem)',
-                    color: '#f0ece5',
+                    color: 'var(--text)',
                     letterSpacing: '-0.02em',
                   }}
                 >
@@ -134,7 +134,7 @@ export default function About() {
                   style={{
                     fontFamily: 'var(--font-space-grotesk)',
                     fontSize: '0.65rem',
-                    color: '#3a3835',
+                    color: 'var(--text-faint)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                   }}

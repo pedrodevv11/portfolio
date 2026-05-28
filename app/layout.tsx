@@ -29,6 +29,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="pt-BR"
       className={`${syne.variable} ${spaceGrotesk.variable}`}
     >
+      <head>
+        {/* aplica o tema salvo antes da tela pintar, pra nao "piscar" */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body>
         <ScrollProgress />
         <Cursor />

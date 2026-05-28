@@ -47,7 +47,7 @@ export default function Cursor() {
         width: '16px',
         height: '16px',
         borderRadius: '50%',
-        border: '1px solid #c8a96a',
+        border: '1px solid var(--accent)',
         pointerEvents: 'none',
         zIndex: 9999,
       }}

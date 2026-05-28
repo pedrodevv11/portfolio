@@ -8,7 +8,7 @@ export default function Projects() {
     <section
       id="projetos"
       style={{
-        backgroundColor: '#090909',
+        backgroundColor: 'var(--bg)',
         paddingTop: '7rem',
         paddingBottom: '6rem',
       }}
@@ -26,7 +26,7 @@ export default function Projects() {
               fontFamily: 'var(--font-syne)',
               fontWeight: 800,
               fontSize: 'clamp(2.6rem, 6.5vw, 5.5rem)',
-              color: '#f0ece5',
+              color: 'var(--text)',
               lineHeight: 0.95,
               letterSpacing: '-0.025em',
               marginBottom: '1rem',
@@ -38,7 +38,7 @@ export default function Projects() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.85rem',
-              color: '#5c5855',
+              color: 'var(--text-muted)',
               lineHeight: 1.6,
               maxWidth: '46ch',
             }}
@@ -54,8 +54,8 @@ export default function Projects() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.07)',
-            borderBottom: '1px solid rgba(255,255,255,0.07)',
+            borderTop: '1px solid var(--border)',
+            borderBottom: '1px solid var(--border)',
             paddingTop: '5rem',
             paddingBottom: '5rem',
             display: 'flex',
@@ -72,7 +72,7 @@ export default function Projects() {
               fontSize: '0.62rem',
               textTransform: 'uppercase',
               letterSpacing: '0.18em',
-              color: '#c8a96a',
+              color: 'var(--accent)',
             }}
           >
             Em desenvolvimento
@@ -82,7 +82,7 @@ export default function Projects() {
               fontFamily: 'var(--font-syne)',
               fontWeight: 700,
               fontSize: 'clamp(1.5rem, 3.5vw, 2.6rem)',
-              color: '#4a4744',
+              color: 'var(--text-dim)',
               letterSpacing: '-0.02em',
               lineHeight: 1.1,
               maxWidth: '20ch',
@@ -96,15 +96,15 @@ export default function Projects() {
               marginTop: '0.8rem',
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.82rem',
-              color: '#f0ece5',
+              color: 'var(--text)',
               textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
               transition: 'color 0.25s ease',
             }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#c8a96a')}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#f0ece5')}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--accent)')}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text)')}
           >
             <span>Quer ser o primeiro projeto?</span>
             <span>-&gt;</span>

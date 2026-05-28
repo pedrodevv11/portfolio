@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Link from 'next/link'
+import ThemeToggle from './ui/ThemeToggle'
 
 export default function Header() {
   const navRef = useRef<HTMLElement>(null)
@@ -20,10 +21,10 @@ export default function Header() {
     const onScroll = () => {
       if (!nav) return
       if (window.scrollY > 50) {
-        nav.style.backgroundColor = 'rgba(9,9,9,0.88)'
+        nav.style.backgroundColor = 'var(--nav-bg)'
         nav.style.backdropFilter = 'blur(18px)'
         ;(nav.style as CSSStyleDeclaration & { WebkitBackdropFilter: string }).WebkitBackdropFilter = 'blur(18px)'
-        nav.style.borderBottomColor = 'rgba(255,255,255,0.06)'
+        nav.style.borderBottomColor = 'var(--border)'
       } else {
         nav.style.backgroundColor = 'transparent'
         nav.style.backdropFilter = 'none'
@@ -56,7 +57,7 @@ export default function Header() {
             fontFamily: 'var(--font-syne)',
             fontWeight: 800,
             fontSize: '1.1rem',
-            color: '#f0ece5',
+            color: 'var(--text)',
             letterSpacing: '-0.02em',
             textDecoration: 'none',
           }}
@@ -76,17 +77,18 @@ export default function Header() {
               style={{
                 fontFamily: 'var(--font-space-grotesk)',
                 fontSize: '0.8rem',
-                color: '#5c5855',
+                color: 'var(--text-muted)',
                 textDecoration: 'none',
                 transition: 'color 0.25s ease',
                 letterSpacing: '0.01em',
               }}
-              onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#f0ece5')}
-              onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = '#5c5855')}
+              onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = 'var(--text)')}
+              onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = 'var(--text-muted)')}
             >
               {label}
             </a>
           ))}
+          <ThemeToggle />
         </div>
       </div>
     </nav>

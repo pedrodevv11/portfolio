@@ -29,10 +29,10 @@ export default function Contact() {
     <section
       id="contato"
       style={{
-        backgroundColor: '#090909',
+        backgroundColor: 'var(--bg)',
         paddingTop: '6rem',
         paddingBottom: '8rem',
-        borderTop: '1px solid rgba(255,255,255,0.07)',
+        borderTop: '1px solid var(--border)',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2.5rem' }}>
@@ -48,7 +48,7 @@ export default function Contact() {
               fontFamily: 'var(--font-syne)',
               fontWeight: 800,
               fontSize: 'clamp(2.6rem, 6.5vw, 5.5rem)',
-              color: '#f0ece5',
+              color: 'var(--text)',
               lineHeight: 0.95,
               letterSpacing: '-0.025em',
               marginBottom: '1.2rem',
@@ -62,7 +62,7 @@ export default function Contact() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.9rem',
-              color: '#5c5855',
+              color: 'var(--text-muted)',
               lineHeight: 1.7,
               maxWidth: '38ch',
             }}
@@ -88,9 +88,9 @@ export default function Contact() {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 padding: '1.6rem 0',
-                borderBottom: '1px solid rgba(255,255,255,0.07)',
+                borderBottom: '1px solid var(--border)',
                 textDecoration: 'none',
-                color: '#f0ece5',
+                color: 'var(--text)',
                 transition: 'border-color 0.25s ease',
                 cursor: 'pointer',
               }}
@@ -98,21 +98,21 @@ export default function Contact() {
                 ;(e.currentTarget as HTMLElement).style.borderBottomColor = 'rgba(200,169,106,0.3)'
               }}
               onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLElement).style.borderBottomColor = 'rgba(255,255,255,0.07)'
+                ;(e.currentTarget as HTMLElement).style.borderBottomColor = 'var(--border)'
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
                 <Icon
                   size={18}
                   weight="light"
-                  style={{ color: '#5c5855', flexShrink: 0 }}
+                  style={{ color: 'var(--text-muted)', flexShrink: 0 }}
                 />
                 <div>
                   <div
                     style={{
                       fontFamily: 'var(--font-space-grotesk)',
                       fontSize: '0.65rem',
-                      color: '#5c5855',
+                      color: 'var(--text-muted)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.1em',
                       marginBottom: '3px',
@@ -125,7 +125,7 @@ export default function Contact() {
                       fontFamily: 'var(--font-syne)',
                       fontWeight: 600,
                       fontSize: 'clamp(0.85rem, 1.5vw, 1.15rem)',
-                      color: '#f0ece5',
+                      color: 'var(--text)',
                       letterSpacing: '-0.01em',
                     }}
                   >
@@ -136,7 +136,7 @@ export default function Contact() {
               <ArrowUpRight
                 size={16}
                 weight="light"
-                style={{ color: '#3a3835', flexShrink: 0 }}
+                style={{ color: 'var(--text-faint)', flexShrink: 0 }}
               />
             </motion.a>
           ))}
@@ -160,7 +160,7 @@ export default function Contact() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.7rem',
-              color: '#2e2c2a',
+              color: 'var(--text-faintest)',
               letterSpacing: '0.04em',
             }}
           >
@@ -170,7 +170,7 @@ export default function Contact() {
             style={{
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.7rem',
-              color: '#2e2c2a',
+              color: 'var(--text-faintest)',
               letterSpacing: '0.04em',
             }}
           >

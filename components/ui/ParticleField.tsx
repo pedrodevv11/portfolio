@@ -37,8 +37,14 @@ export default function ParticleField() {
     const geo = new THREE.BufferGeometry()
     geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
 
+    // pega a cor das particulas da variavel de tema (funciona no claro e no escuro)
+    const particleColor =
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--particle')
+        .trim() || '#f0ece5'
+
     const mat = new THREE.PointsMaterial({
-      color: 0xf0ece5,
+      color: new THREE.Color(particleColor),
       size: 1.2,
       sizeAttenuation: true,
       transparent: true,
