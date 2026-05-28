@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
+import Scramble from '../ui/Scramble'
 
 const SKILLS = ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js']
 
@@ -52,7 +53,9 @@ export default function About() {
               marginBottom: '2rem',
             }}
           >
-            Pedro<br />Lucas
+            <Scramble text="Pedro" />
+            <br />
+            <Scramble text="Lucas" />
           </h2>
           <p
             style={{

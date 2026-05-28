@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import dynamic from 'next/dynamic'
+import Magnetic from '../ui/Magnetic'
 
 // fundo de partículas em 3D — carregado só no cliente pra nao pesar no SSR
 const ParticleField = dynamic(() => import('../ui/ParticleField'), { ssr: false })
@@ -161,45 +162,49 @@ export default function Hero() {
             className="h-cta"
             style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}
           >
-            <a
-              href="#projetos"
-              style={{
-                display: 'inline-block',
-                padding: '0.85rem 1.9rem',
-                backgroundColor: '#f0ece5',
-                color: '#090909',
-                fontFamily: 'var(--font-space-grotesk)',
-                fontWeight: 500,
-                fontSize: '0.82rem',
-                letterSpacing: '0.03em',
-                textDecoration: 'none',
-                borderRadius: '2px',
-                transition: 'background-color 0.25s ease',
-              }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.backgroundColor = '#c8a96a')
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.backgroundColor = '#f0ece5')
-              }
-            >
-              Ver Projetos
-            </a>
-            <a
-              href="#contato"
-              style={{
-                fontFamily: 'var(--font-space-grotesk)',
-                fontSize: '0.82rem',
-                color: '#5c5855',
-                textDecoration: 'none',
-                transition: 'color 0.25s ease',
-                letterSpacing: '0.01em',
-              }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#f0ece5')}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#5c5855')}
-            >
-              Entrar em contato
-            </a>
+            <Magnetic>
+              <a
+                href="#projetos"
+                style={{
+                  display: 'inline-block',
+                  padding: '0.85rem 1.9rem',
+                  backgroundColor: '#f0ece5',
+                  color: '#090909',
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontWeight: 500,
+                  fontSize: '0.82rem',
+                  letterSpacing: '0.03em',
+                  textDecoration: 'none',
+                  borderRadius: '2px',
+                  transition: 'background-color 0.25s ease',
+                }}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLElement).style.backgroundColor = '#c8a96a')
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLElement).style.backgroundColor = '#f0ece5')
+                }
+              >
+                Ver Projetos
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href="#contato"
+                style={{
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontSize: '0.82rem',
+                  color: '#5c5855',
+                  textDecoration: 'none',
+                  transition: 'color 0.25s ease',
+                  letterSpacing: '0.01em',
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = '#f0ece5')}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = '#5c5855')}
+              >
+                Entrar em contato
+              </a>
+            </Magnetic>
           </div>
         </div>
       </div>

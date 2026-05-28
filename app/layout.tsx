@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Syne, Space_Grotesk } from 'next/font/google'
 import './globals.css'
+import Cursor from '@/components/ui/Cursor'
+import ScrollProgress from '@/components/ui/ScrollProgress'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -28,6 +30,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${syne.variable} ${spaceGrotesk.variable}`}
     >
       <body>
+        <ScrollProgress />
+        <Cursor />
         <div
           aria-hidden="true"
           className="fixed inset-0 pointer-events-none"

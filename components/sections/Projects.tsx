@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
+import Scramble from '../ui/Scramble'
 
 export default function Projects() {
   return (
@@ -31,7 +32,7 @@ export default function Projects() {
               marginBottom: '1rem',
             }}
           >
-            Projetos
+            <Scramble text="Projetos" />
           </h2>
           <p
             style={{

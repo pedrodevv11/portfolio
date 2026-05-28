@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import { EnvelopeSimple, WhatsappLogo, ArrowUpRight } from '@phosphor-icons/react'
+import Scramble from '../ui/Scramble'
 
 // mensagem que ja vem pronta quando o cliente abre o contato
 const MENSAGEM = 'Olá, Pedro! Vi seu portfólio e gostaria de planejar um site para o meu negócio. Podemos conversar?'
@@ -53,7 +54,9 @@ export default function Contact() {
               marginBottom: '1.2rem',
             }}
           >
-            Vamos<br />conversar.
+            <Scramble text="Vamos" />
+            <br />
+            <Scramble text="conversar." />
           </h2>
           <p
             style={{
