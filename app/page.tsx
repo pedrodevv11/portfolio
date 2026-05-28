@@ -1,17 +1,18 @@
-import Nav from '@/components/Nav'
-import HeroSection from '@/components/HeroSection'
-import ProjectsSection from '@/components/ProjectsSection'
-import SkillsSection from '@/components/SkillsSection'
-import ContactSection from '@/components/ContactSection'
+import Header from '@/components/Header'
+import Hero from '@/components/sections/Hero'
+import Projects from '@/components/sections/Projects'
+import About from '@/components/sections/About'
+import Contact from '@/components/sections/Contact'
 
+// Página inicial — junta todas as seções do portfólio
 export default function Home() {
   return (
     <main>
-      <Nav />
-      <HeroSection />
-      <ProjectsSection />
-      <SkillsSection />
-      <ContactSection />
+      <Header />
+      <Hero />
+      <Projects />
+      <About />
+      <Contact />
     </main>
   )
 }

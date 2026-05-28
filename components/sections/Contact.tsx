@@ -18,7 +18,7 @@ const LINKS = [
   },
 ]
 
-export default function ContactSection() {
+export default function Contact() {
   return (
     <section
       id="contato"

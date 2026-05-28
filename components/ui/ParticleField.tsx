@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
-export default function ThreeBackground() {
+export default function ParticleField() {
   const mountRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 
 const SKILLS = ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js']
 
-export default function SkillsSection() {
+export default function About() {
   return (
     <section
       id="sobre"

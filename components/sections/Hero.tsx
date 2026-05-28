@@ -4,9 +4,10 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import dynamic from 'next/dynamic'
 
-const ThreeBackground = dynamic(() => import('./ThreeBackground'), { ssr: false })
+// fundo de partículas em 3D — carregado só no cliente pra nao pesar no SSR
+const ParticleField = dynamic(() => import('../ui/ParticleField'), { ssr: false })
 
-export default function HeroSection() {
+export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function HeroSection() {
       className="relative overflow-hidden"
       style={{ minHeight: '100dvh', backgroundColor: '#090909' }}
     >
-      <ThreeBackground />
+      <ParticleField />
 
       <div
         aria-hidden="true"

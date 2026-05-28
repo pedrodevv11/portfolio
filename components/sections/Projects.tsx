@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react'
 
-export default function ProjectsSection() {
+export default function Projects() {
   return (
     <section
       id="projetos"

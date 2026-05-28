@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import Link from 'next/link'
 
-export default function Nav() {
+export default function Header() {
   const navRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
