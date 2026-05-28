@@ -3,18 +3,23 @@
 import { motion } from 'motion/react'
 import { EnvelopeSimple, WhatsappLogo, ArrowUpRight } from '@phosphor-icons/react'
 
+// mensagem que ja vem pronta quando o cliente abre o contato
+const MENSAGEM = 'Olá, Pedro! Vi seu portfólio e gostaria de planejar um site para o meu negócio. Podemos conversar?'
+
 const LINKS = [
   {
     icon: WhatsappLogo,
     label: 'WhatsApp',
     value: '+55 79 98131-1614',
-    href: 'https://wa.me/5579981311614',
+    href: `https://wa.me/5579981311614?text=${encodeURIComponent(MENSAGEM)}`,
   },
   {
     icon: EnvelopeSimple,
     label: 'E-mail',
     value: 'pedrolucassantanadealbuquerque@gmail.com',
-    href: 'mailto:pedrolucassantanadealbuquerque@gmail.com',
+    href: `mailto:pedrolucassantanadealbuquerque@gmail.com?subject=${encodeURIComponent(
+      'Quero planejar um site'
+    )}&body=${encodeURIComponent(MENSAGEM)}`,
   },
 ]
 
