@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'motion/react'
+import Link from 'next/link'
+import { ArrowUpRight } from '@phosphor-icons/react'
 import Scramble from '../ui/Scramble'
 
 export default function Projects() {
@@ -40,11 +42,11 @@ export default function Projects() {
               fontSize: '0.85rem',
               color: 'var(--text-muted)',
               lineHeight: 1.6,
-              maxWidth: '46ch',
+              maxWidth: '50ch',
             }}
           >
-            Cada projeto tem identidade propria. Em breve, sites reais com estilos
-            distintos para cada tipo de negocio.
+            Sites fictícios que criei pra demonstrar identidades visuais distintas
+            para cada tipo de negócio. Cada um com estilo, ritmo e animações próprias.
           </p>
         </motion.div>
 
@@ -53,47 +55,44 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <ProjectCard
+            index="01"
+            name="Forno"
+            type="Pizzaria artesanal"
+            description="Site quente e vibrante, com pizza animada em CSS, cardápio interativo e tipografia de impacto."
+            href="/forno"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
           style={{
+            marginTop: '2rem',
+            paddingTop: '2rem',
             borderTop: '1px solid var(--border)',
-            borderBottom: '1px solid var(--border)',
-            paddingTop: '5rem',
-            paddingBottom: '5rem',
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            gap: '1.2rem',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1rem',
           }}
         >
           <span
             style={{
               fontFamily: 'var(--font-space-grotesk)',
-              fontSize: '0.62rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.18em',
-              color: 'var(--accent)',
+              fontSize: '0.8rem',
+              color: 'var(--text-muted)',
             }}
           >
-            Em desenvolvimento
-          </span>
-          <span
-            style={{
-              fontFamily: 'var(--font-syne)',
-              fontWeight: 700,
-              fontSize: 'clamp(1.5rem, 3.5vw, 2.6rem)',
-              color: 'var(--text-dim)',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.1,
-              maxWidth: '20ch',
-            }}
-          >
-            Projetos chegando em breve.
+            Mais demos a caminho — loja de roupa e academia.
           </span>
           <a
             href="#contato"
             style={{
-              marginTop: '0.8rem',
               fontFamily: 'var(--font-space-grotesk)',
               fontSize: '0.82rem',
               color: 'var(--text)',
@@ -106,11 +105,199 @@ export default function Projects() {
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--accent)')}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text)')}
           >
-            <span>Quer ser o primeiro projeto?</span>
+            <span>Quer um site assim?</span>
             <span>-&gt;</span>
           </a>
         </motion.div>
       </div>
     </section>
+  )
+}
+
+function ProjectCard({
+  index,
+  name,
+  type,
+  description,
+  href,
+}: {
+  index: string
+  name: string
+  type: string
+  description: string
+  href: string
+}) {
+  return (
+    <Link href={href} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <motion.div
+        whileHover="hover"
+        initial="rest"
+        animate="rest"
+        className="proj-card"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          gap: '0',
+          border: '1px solid var(--border)',
+          borderRadius: '4px',
+          overflow: 'hidden',
+          cursor: 'pointer',
+        }}
+      >
+        {/* preview com a cara do site (paleta quente) */}
+        <div
+          style={{
+            position: 'relative',
+            aspectRatio: '16 / 7',
+            backgroundColor: '#fbf2e3',
+            overflow: 'hidden',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <motion.div
+            variants={{ rest: { scale: 1 }, hover: { scale: 1.06 } }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1.4rem',
+            }}
+          >
+            <div
+              style={{
+                width: 'clamp(54px, 9vw, 88px)',
+                height: 'clamp(54px, 9vw, 88px)',
+                borderRadius: '50%',
+                background:
+                  'radial-gradient(circle at 50% 50%, #e9b864 0 62%, #cf8a3a 62% 80%, #b5762f 80% 100%)',
+                position: 'relative',
+              }}
+            >
+              <span style={{ position: 'absolute', inset: '14%', borderRadius: '50%', background: 'radial-gradient(circle at 50% 45%, #e0392b 0 72%, #c8311f 100%)' }} />
+              {[
+                { t: '26%', l: '30%' },
+                { t: '54%', l: '54%' },
+                { t: '38%', l: '60%' },
+                { t: '62%', l: '32%' },
+              ].map((p, i) => (
+                <span
+                  key={i}
+                  style={{
+                    position: 'absolute',
+                    top: p.t,
+                    left: p.l,
+                    width: '14%',
+                    height: '14%',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle at 40% 35%, #d6452e, #9c1f12)',
+                  }}
+                />
+              ))}
+            </div>
+            <span
+              style={{
+                fontFamily: 'var(--font-syne)',
+                fontWeight: 800,
+                fontSize: 'clamp(2rem, 6vw, 4rem)',
+                color: '#e0392b',
+                letterSpacing: '0.02em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Forno
+            </span>
+          </motion.div>
+
+          <span
+            style={{
+              position: 'absolute',
+              top: '12px',
+              right: '14px',
+              fontSize: '0.6rem',
+              fontWeight: 700,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'rgba(27,20,16,0.5)',
+            }}
+          >
+            Fictício
+          </span>
+        </div>
+
+        {/* infos */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1.5rem',
+            padding: '1.6rem 1.8rem',
+          }}
+        >
+          <div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'baseline',
+                gap: '0.9rem',
+                marginBottom: '0.5rem',
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontSize: '0.65rem',
+                  color: 'var(--text-faint)',
+                  letterSpacing: '0.1em',
+                }}
+              >
+                {index}
+              </span>
+              <span
+                style={{
+                  fontFamily: 'var(--font-syne)',
+                  fontWeight: 700,
+                  fontSize: 'clamp(1.3rem, 2.6vw, 1.9rem)',
+                  color: 'var(--text)',
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                {name}
+              </span>
+              <span
+                style={{
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontSize: '0.72rem',
+                  color: 'var(--accent)',
+                }}
+              >
+                {type}
+              </span>
+            </div>
+            <p
+              style={{
+                fontFamily: 'var(--font-space-grotesk)',
+                fontSize: '0.82rem',
+                color: 'var(--text-muted)',
+                lineHeight: 1.55,
+                maxWidth: '54ch',
+              }}
+            >
+              {description}
+            </p>
+          </div>
+
+          <motion.span
+            variants={{ rest: { x: 0, y: 0 }, hover: { x: 4, y: -4 } }}
+            transition={{ duration: 0.3 }}
+            style={{ color: 'var(--text)', flexShrink: 0 }}
+          >
+            <ArrowUpRight size={24} weight="light" />
+          </motion.span>
+        </div>
+      </motion.div>
+    </Link>
   )
 }

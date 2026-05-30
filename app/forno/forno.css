@@ -1,0 +1,83 @@
+/* ===== estilos isolados do demo FORNO (pizzaria ficticia) ===== */
+
+.fr-root {
+  --cream: #fbf2e3;
+  --ink: #1b1410;
+  --tomato: #e0392b;
+  --ember: #f0913a;
+  --basil: #2f7a47;
+  --crust: #d98b3e;
+
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-dm), system-ui, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.fr-display {
+  font-family: var(--font-anton), Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.9;
+}
+
+/* marquee infinito */
+.fr-marquee {
+  display: flex;
+  width: max-content;
+  animation: fr-scroll 26s linear infinite;
+}
+.fr-marquee.reverse {
+  animation-direction: reverse;
+}
+@keyframes fr-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* pizza giratoria em CSS puro */
+.fr-pizza {
+  position: relative;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #e9b864 0 64%, #cf8a3a 64% 78%, #b5762f 78% 100%);
+  box-shadow: 0 40px 80px -30px rgba(120, 60, 20, 0.55);
+  animation: fr-spin 40s linear infinite;
+}
+.fr-pizza::before {
+  content: '';
+  position: absolute;
+  inset: 13%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 45%, #e0392b 0 70%, #c8311f 100%);
+}
+@keyframes fr-spin {
+  to { transform: rotate(360deg); }
+}
+.fr-topping {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* leve flutuar */
+@keyframes fr-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* vapor subindo */
+@keyframes fr-steam {
+  0% { opacity: 0; transform: translateY(0) scaleX(1); }
+  40% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-60px) scaleX(1.6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fr-marquee,
+  .fr-pizza {
+    animation: none !important;
+  }
+}
