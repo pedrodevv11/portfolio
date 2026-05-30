@@ -1,3 +1,4 @@
+import Preloader from '@/components/forno/Preloader'
 import Nav from '@/components/forno/Nav'
 import Hero from '@/components/forno/Hero'
 import Marquee from '@/components/forno/Marquee'
@@ -15,6 +16,7 @@ import FicticioBadge from '@/components/forno/FicticioBadge'
 export default function FornoPage() {
   return (
     <>
+      <Preloader />
       <Nav />
       <Hero />
       <Marquee />

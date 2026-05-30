@@ -36,7 +36,7 @@ export default function Story() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="fr-display"
-            style={{ fontSize: 'clamp(2.6rem, 7vw, 6rem)', margin: 0 }}
+            style={{ fontSize: 'clamp(2.6rem, 7vw, 6rem)', margin: 0, lineHeight: 1.08 }}
           >
             Fogo, tempo<br />
             <span style={{ color: 'var(--ember)' }}>e paciência.</span>
