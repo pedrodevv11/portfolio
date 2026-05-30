@@ -2,23 +2,7 @@
 
 import { motion, useMotionValue, useSpring } from 'motion/react'
 import { useEffect } from 'react'
-
-// posicoes das coberturas na pizza (em % dentro do circulo)
-const PEPPERONI = [
-  { top: '20%', left: '30%' },
-  { top: '28%', left: '62%' },
-  { top: '50%', left: '22%' },
-  { top: '46%', left: '50%' },
-  { top: '58%', left: '70%' },
-  { top: '72%', left: '40%' },
-  { top: '34%', left: '44%' },
-]
-const BASIL = [
-  { top: '35%', left: '48%' },
-  { top: '55%', left: '38%' },
-  { top: '62%', left: '58%' },
-  { top: '26%', left: '50%' },
-]
+import PizzaSVG from './PizzaSVG'
 
 const TAGS = [
   { label: 'Forno a lenha', top: '12%', left: '4%', color: 'var(--basil)' },
@@ -197,37 +181,9 @@ export default function Hero() {
           }}
         >
           <div
-            className="fr-pizza"
-            style={{ width: 'clamp(260px, 38vw, 460px)', aspectRatio: '1' }}
+            style={{ width: 'clamp(260px, 40vw, 480px)', aspectRatio: '0.96' }}
           >
-            {PEPPERONI.map((p, i) => (
-              <span
-                key={`pep-${i}`}
-                className="fr-topping"
-                style={{
-                  top: p.top,
-                  left: p.left,
-                  width: '13%',
-                  height: '13%',
-                  background: 'radial-gradient(circle at 40% 35%, #d6452e, #9c1f12)',
-                  boxShadow: 'inset 0 0 0 2px rgba(0,0,0,0.06)',
-                }}
-              />
-            ))}
-            {BASIL.map((b, i) => (
-              <span
-                key={`bas-${i}`}
-                className="fr-topping"
-                style={{
-                  top: b.top,
-                  left: b.left,
-                  width: '7%',
-                  height: '7%',
-                  background: 'var(--basil)',
-                  borderRadius: '60% 0 60% 0',
-                }}
-              />
-            ))}
+            <PizzaSVG />
           </div>
 
           {TAGS.map((t) => (

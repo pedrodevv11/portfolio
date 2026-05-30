@@ -56,6 +56,13 @@
 @keyframes fr-spin {
   to { transform: rotate(360deg); }
 }
+
+/* pizza em SVG: so o miolo gira, a sombra fica parada */
+.fr-pizza-rotor {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fr-spin 55s linear infinite;
+}
 .fr-topping {
   position: absolute;
   border-radius: 50%;
@@ -77,7 +84,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .fr-marquee,
-  .fr-pizza {
+  .fr-pizza,
+  .fr-pizza-rotor {
     animation: none !important;
   }
 }

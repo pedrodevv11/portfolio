@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import Link from 'next/link'
 import { ArrowUpRight } from '@phosphor-icons/react'
 import Scramble from '../ui/Scramble'
+import PizzaSVG from '../forno/PizzaSVG'
 
 export default function Projects() {
   return (
@@ -167,34 +168,11 @@ function ProjectCard({
           >
             <div
               style={{
-                width: 'clamp(54px, 9vw, 88px)',
-                height: 'clamp(54px, 9vw, 88px)',
-                borderRadius: '50%',
-                background:
-                  'radial-gradient(circle at 50% 50%, #e9b864 0 62%, #cf8a3a 62% 80%, #b5762f 80% 100%)',
-                position: 'relative',
+                width: 'clamp(64px, 11vw, 104px)',
+                height: 'clamp(64px, 11vw, 104px)',
               }}
             >
-              <span style={{ position: 'absolute', inset: '14%', borderRadius: '50%', background: 'radial-gradient(circle at 50% 45%, #e0392b 0 72%, #c8311f 100%)' }} />
-              {[
-                { t: '26%', l: '30%' },
-                { t: '54%', l: '54%' },
-                { t: '38%', l: '60%' },
-                { t: '62%', l: '32%' },
-              ].map((p, i) => (
-                <span
-                  key={i}
-                  style={{
-                    position: 'absolute',
-                    top: p.t,
-                    left: p.l,
-                    width: '14%',
-                    height: '14%',
-                    borderRadius: '50%',
-                    background: 'radial-gradient(circle at 40% 35%, #d6452e, #9c1f12)',
-                  }}
-                />
-              ))}
+              <PizzaSVG />
             </div>
             <span
               style={{
