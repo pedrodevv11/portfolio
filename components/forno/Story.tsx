@@ -1,12 +1,13 @@
 'use client'
 
 import { motion } from 'motion/react'
+import CountUp from './CountUp'
 
 const STATS = [
-  { num: '450°', label: 'graus no forno' },
-  { num: '48h', label: 'de fermentação' },
-  { num: '100%', label: 'forno a lenha' },
-  { num: '25min', label: 'no seu endereço' },
+  { to: 450, suffix: '°', label: 'graus no forno' },
+  { to: 48, suffix: 'h', label: 'de fermentação' },
+  { to: 100, suffix: '%', label: 'forno a lenha' },
+  { to: 25, suffix: 'min', label: 'no seu endereço' },
 ]
 
 export default function Story() {
@@ -80,7 +81,7 @@ export default function Story() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="fr-display" style={{ fontSize: 'clamp(2.4rem, 6vw, 4rem)', color: 'var(--ember)' }}>
-                {s.num}
+                <CountUp to={s.to} suffix={s.suffix} />
               </div>
               <div style={{ fontSize: '0.85rem', color: 'rgba(251,242,227,0.65)', marginTop: '0.3rem' }}>
                 {s.label}
