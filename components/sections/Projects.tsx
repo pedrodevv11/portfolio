@@ -4,7 +4,6 @@ import { motion } from 'motion/react'
 import Link from 'next/link'
 import { ArrowUpRight } from '@phosphor-icons/react'
 import Scramble from '../ui/Scramble'
-import PizzaSVG from '../forno/PizzaSVG'
 
 export default function Projects() {
   return (
@@ -166,14 +165,18 @@ function ProjectCard({
               gap: '1.4rem',
             }}
           >
-            <div
+            <img
+              src="/pizza.jpg"
+              alt="Pizza do projeto Forno"
               style={{
                 width: 'clamp(64px, 11vw, 104px)',
                 height: 'clamp(64px, 11vw, 104px)',
+                objectFit: 'cover',
+                borderRadius: '50%',
+                border: '4px solid #fff',
+                boxShadow: '0 10px 26px -10px rgba(120,60,20,0.5)',
               }}
-            >
-              <PizzaSVG />
-            </div>
+            />
             <span
               style={{
                 fontFamily: 'var(--font-syne)',

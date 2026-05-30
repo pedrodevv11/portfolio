@@ -2,7 +2,6 @@
 
 import { motion, useMotionValue, useSpring } from 'motion/react'
 import { useEffect } from 'react'
-import PizzaSVG from './PizzaSVG'
 
 const TAGS = [
   { label: 'Forno a lenha', top: '12%', left: '4%', color: 'var(--basil)' },
@@ -181,9 +180,36 @@ export default function Hero() {
           }}
         >
           <div
-            style={{ width: 'clamp(260px, 40vw, 480px)', aspectRatio: '0.96' }}
+            style={{
+              position: 'relative',
+              width: 'clamp(280px, 42vw, 500px)',
+              aspectRatio: '1',
+            }}
           >
-            <PizzaSVG />
+            {/* sombra fica parada */}
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                inset: '10%',
+                borderRadius: '50%',
+                boxShadow: '0 50px 90px -25px rgba(120,60,20,0.6)',
+              }}
+            />
+            <img
+              src="/pizza.jpg"
+              alt="Pizza margherita artesanal de forno a lenha"
+              className="fr-photo-spin"
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '50%',
+                border: '7px solid #fff',
+                display: 'block',
+              }}
+            />
           </div>
 
           {TAGS.map((t) => (
